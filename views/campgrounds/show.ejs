@@ -45,8 +45,8 @@
                     </div>
                     <hr>
                     <% campground.comments.forEach(function(comment){ %>
-                        <div class='row'>
-                            <div class='col-md-12' id='show_comment_block'>
+                        <div class='row' id='show_comment_block'>
+                            <div class='col-md-12'>
                                 <hr>
                                 <strong> <%= comment.author.username %></strong>
                                 <span class='pull-right'><%=moment(comment.created_at).fromNow()%></span>
@@ -93,7 +93,7 @@
                 position: center,
                 map: map
             });
-            marker.addListener('click', function () {
+            marker.addListener('click', function() {
                 infowindow.open(map, marker);
             });
         }
